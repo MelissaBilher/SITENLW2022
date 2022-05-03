@@ -1,0 +1,38 @@
+:root {
+  font-size: 100%; /* 16px = 1rem */
+  --primary-color: #00856F;
+  --secondary-color: #212529;
+  --secondary-color-gray: #495057;
+  --neutral-white: #ffffff;
+
+}
+
+body {
+  font-family: 'DM Sans';
+}
+
+h4 { 
+  color: var(--primary-color);
+  font-size: 0.875rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+p {
+  font-size: 1.125rem;
+  color: var(--secondary-color-gray);
+}
+
+button {
+  background: var(--primary-color);
+  color: var(--neutral-white);
+  font-size: 0.875rem;
+}
+
+h3 {
+  color: var(--secondary-color);
+}
+
