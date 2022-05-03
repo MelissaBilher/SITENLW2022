@@ -9,6 +9,13 @@
 
 body {
   font-family: 'DM Sans';
+  text-align: center;
+}
+
+header {
+  width: 23.375rem;
+  margin-right:auto;
+  margin-left:auto;
 }
 
 h4 { 
@@ -19,11 +26,13 @@ h4 {
 h1 {
   font-size: 2rem;
   color: var(--secondary-color);
+  line-height: 130%;
 }
 
 p {
   font-size: 1.125rem;
   color: var(--secondary-color-gray);
+  line-height: 150%;
 }
 
 button {
