@@ -1,3 +1,5 @@
+/* =============== GERAL =============== */
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -11,7 +13,8 @@
   --secondary-color: #212529;
   --secondary-color-gray: #495057;
   --neutral-white: #ffffff;
-
+  
+  --nav-height: 4.5rem;
 }
 
 body {
@@ -19,13 +22,32 @@ body {
   text-align: center;
 }
 
-header {
-  margin-top: 2.5625rem;
+.wrapper {
   width: 23.375rem;
   margin-right:auto;
   margin-left:auto;
-  background-color: var(--primary-color-green);
+  padding-inline: 1.5rem;
 }
+
+/* =============== HEADER =============== */
+
+header {
+  margin-top: calc(2.5625rem + var(--nav-height));
+}
+
+header::before {
+  content: "";
+  width:100vw;
+  height: calc(67.5rem + var(--nav-height));
+   
+  background-color: var(--primary-color-green);
+  display: block;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  } 
 
 header img {
   width: 16.4375rem;
@@ -35,27 +57,27 @@ header img {
   object-position: 0 1.25rem;
 }
 
-h4 { 
+header h4 { 
   color: var(--primary-color);
   font-size: 0.875rem;
   margin-bottom: 1rem;
 }
 
-h1 {
+header h1 {
   font-size: 2rem;
   color: var(--secondary-color);
   line-height: 130%;
   margin-bottom: 1.5rem;
 }
 
-p {
+header p {
   font-size: 1.125rem;
   color: var(--secondary-color-gray);
   line-height: 150%;
   margin-bottom: 2rem;
 }
 
-button {
+header button {
   background: var(--primary-color);
   color: var(--neutral-white);
   
@@ -106,3 +128,34 @@ button {
   margin:0;
 }
 
+/* =============== NAVIGATION =============== */
+
+nav {
+  display: flex;
+
+  height: var(--nav-height);
+  
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.scroll {
+  background: var(--primary-color);
+  width: 100vw;
+ }
+
+ nav.scroll svg:nth-child(1) path {
+   fill: var(--neutral-white);
+ }
+
+ nav.scroll svg:nth-child(2) path {
+   stroke: var(--neutral-white);
+ }
