@@ -1,6 +1,12 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-size: 100%; /* 16px = 1rem */
   --primary-color: #00856F;
+  --primary-color-green: #dce9e2;
   --secondary-color: #212529;
   --secondary-color-gray: #495057;
   --neutral-white: #ffffff;
@@ -13,32 +19,54 @@ body {
 }
 
 header {
+  margin-top: 2.5625rem;
   width: 23.375rem;
   margin-right:auto;
   margin-left:auto;
+  background-color: var(--primary-color-green);
 }
 
 h4 { 
   color: var(--primary-color);
   font-size: 0.875rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2rem;
   color: var(--secondary-color);
   line-height: 130%;
+  margin-bottom: 1.5rem;
 }
 
 p {
   font-size: 1.125rem;
   color: var(--secondary-color-gray);
   line-height: 150%;
+  margin-bottom: 2rem;
 }
 
 button {
   background: var(--primary-color);
   color: var(--neutral-white);
-  font-size: 0.875rem;
+  
+  margin-bottom: 3.75rem;
+  border: none;
+  border-radius: 2.5rem;
+  height: 3.25rem;
+  width: 16.4375rem;
+
+  font-size: 0.875rem; 
+  text-transform: uppercase;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h3 {
