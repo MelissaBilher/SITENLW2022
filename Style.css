@@ -27,6 +27,14 @@ header {
   background-color: var(--primary-color-green);
 }
 
+header img {
+  width: 16.4375rem;
+  
+  display: block;
+  margin-inline: auto;
+  object-position: 0 1.25rem;
+}
+
 h4 { 
   color: var(--primary-color);
   font-size: 0.875rem;
@@ -71,23 +79,30 @@ button {
 }
 
 .curiosities {
-  background: var(--primary-color-brand);
-  
+  background-color: var(--primary-color-brand);
+  border: 1px solid var(--primary-color-green);
+
   width: 20.4375rem;
-  height: 29.375rem;
   
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  padding-block: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.75rem;
 }
 
 .curiosities h3 {
   color: var(--secondary-color);
   font-size: 3rem;
   line-height: 130%;
+  margin-bottom: 0.25rem;
 }
 .curiosities p {
   color: var(--primary-color);
   font-size: 1rem;
   line-height: 150%;
+  margin:0;
 }
 
