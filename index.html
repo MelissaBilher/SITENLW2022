@@ -13,9 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <nav class="scroll">
+<body onscroll="onScroll()">
+  <nav id="navigation" class="">
+
     <div class="wrapper">
+
       <a class="logo" href="#">
         <svg width="133" height="18" viewBox="0 0 133 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -50,11 +52,32 @@
             fill="#00856F" />
         </svg>
       </a>
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 20H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M10 12H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M18 28L30 28" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+
+      <div class="menu">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+
+        <a class="button" href="#">Agende sua consulta</a>
+
+        <ul class="social-links">
+          <li><a href="https://instagram.com/"><img src="/Assents/Instagram.svg" alt="Logo instagram"></a></li>
+          <li><a href="https://facebook.com/"><img src="/Assents/Facebook.svg" alt="Logo Facebook"></a></li>
+          <li><a href="https://youtube.com/"><img src="/Assents/Youtube.svg" alt="Youtube"></a></li>
+        </ul>
+      </div>
+
+      <button class="open-menu"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M10 12H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M18 28L30 28" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+
+      <button class="close-menu"><img src="/Assents/Close.svg" alt="Botão de saída">
+      </button>
     </div>
   </nav>
 
@@ -98,6 +121,7 @@
 
   </header>
 
+  <script src="Main.js"></script>
 </body>
 
 </html>
