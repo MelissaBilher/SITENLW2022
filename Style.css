@@ -20,6 +20,10 @@
   --nav-height: 4.5rem;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -49,13 +53,51 @@ body {
   padding-inline: 1.5rem;
 }
 
-/* =============== HEADER =============== */
+/* =============== NAVIGATION =============== */
 
-header {
-  margin-top: calc(2.5625rem + var(--nav-height));
+nav {
+  display: flex;
+
+  height: var(--nav-height);
+  
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  z-index: 100;
 }
 
-header::before {
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.scroll {
+  background: var(--primary-color);
+ }
+
+ nav.scroll .logo path {
+   fill: var(--neutral-white);
+ }
+
+ nav.scroll button path {
+   stroke: var(--neutral-white);
+ }
+
+nav button {
+ background: none;
+ border: none;
+ cursor:pointer;
+} 
+
+/* =============== HOME =============== */
+
+#home {
+  padding-top: calc(2.5625rem + var(--nav-height));
+}
+
+#home::before {
   content: "";
   width:100%;
   height: calc(67.5rem + var(--nav-height));
@@ -69,7 +111,7 @@ header::before {
   z-index: -1;
   } 
 
-header img {
+#home img {
   width: 16.4375rem;
   
   display: block;
@@ -77,27 +119,27 @@ header img {
   object-position: 0 1.25rem;
 }
 
-header h4 { 
+#home h4 { 
   color: var(--primary-color);
   font-size: 0.875rem;
   margin-bottom: 1rem;
 }
 
-header h1 {
+#home h1 {
   font-size: 2rem;
   color: var(--secondary-color);
   line-height: 130%;
   margin-bottom: 1.5rem;
 }
 
-header p {
+#home p {
   font-size: 1.125rem;
   color: var(--secondary-color-gray);
   line-height: 150%;
   margin-bottom: 2rem;
 }
 
-header button {
+#home button {
   background: var(--primary-color);
   color: var(--neutral-white);
   
@@ -120,7 +162,7 @@ header button {
   margin-right: auto;
 }
 
-.curiosities {
+#home .curiosities {
   background-color: var(--primary-color-brand);
   border: 1px solid var(--primary-color-green);
 
@@ -135,60 +177,26 @@ header button {
   gap: 3.75rem;
 }
 
-.curiosities h3 {
+#home .curiosities h3 {
   color: var(--secondary-color);
   font-size: 3rem;
   line-height: 130%;
   margin-bottom: 0.25rem;
 }
-.curiosities p {
+#home .curiosities p {
   color: var(--primary-color);
   font-size: 1rem;
   line-height: 150%;
   margin:0;
 }
 
-/* =============== NAVIGATION =============== */
-
-nav {
-  display: flex;
-
-  height: var(--nav-height);
-  
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-nav .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav.scroll {
-  background: var(--primary-color);
-  width: 100vw;
- }
-
- nav.scroll svg:nth-child(1) path {
-   fill: var(--neutral-white);
- }
-
- nav.scroll button path {
-   stroke: var(--neutral-white);
- }
-
-nav button {
- background: none;
- border: none;
- cursor:pointer;
-} 
-
  /* =============== MENU EXPANDED =============== */
 body.menu-expanded {
   overflow: hidden;
+}
+
+body.menu-expanded >:not(nav){
+  visibility: hidden;
 }
 
 .menu, .close-menu, body.menu-expanded .open-menu {
@@ -202,6 +210,10 @@ body.menu-expanded .menu, body.menu-expanded .close-menu {
 
 }
 
+.menu {
+  transform: translateY(100%); /* jogar o menu para baixo totalmente */
+}
+
  body.menu-expanded .menu {
    position: fixed;
    top: 0;
@@ -213,10 +225,9 @@ body.menu-expanded .menu, body.menu-expanded .close-menu {
    height: 100vh;
 
    padding-top: var(--nav-height);
- }
 
- body.menu-expanded nav {
-   position: relative;
+   transition: transform 300ms; /* velocidade em que a transformação será feita */
+   transform: translateY(0); /* Trazer o menu de volta */
  }
 
 .menu ul:nth-child(1) {
