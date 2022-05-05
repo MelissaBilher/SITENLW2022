@@ -13,7 +13,9 @@
   --primary-color-brand: #FFFAF1;
   --secondary-color: #212529;
   --secondary-color-gray: #495057;
+  --second-color-brand: #f7f9f9;
   --neutral-white: #ffffff;
+ 
   
   --nav-height: 4.5rem;
 }
@@ -27,11 +29,17 @@ ul {
   list-style: none;
 }
 
+section {
+  padding-block: 6.25rem;
+}
+
 body {
   font-family: 'DM Sans';
   text-align: center;
 
   overflow: overlay; /*deixar a rolagem em cima do stylo, assim não será somado nas larguras.*/
+
+  background-color: var(--second-color-brand);
 }
 
 .wrapper {
@@ -265,4 +273,48 @@ body.menu-expanded path {
 
 body.menu-expanded button path {
   stroke: var(--neutral-white);
+}
+
+
+/* =============== SERVICES =============== */
+
+#services header h4 {
+  font-size: 0.875rem;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  
+  color: var(--primary-color);
+
+  margin-bottom: 1rem;
+}
+
+#services header h2 {
+  font-size: 1.875rem;
+  line-height: 2.4375rem;
+  text-align: center;
+
+  color: var(--secondary-color);
+
+  margin-bottom: 3.75rem;
+}
+
+#services .options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#services .card {
+  padding: 1.5rem;
+  text-align: left;
+
+  background: var(--neutral-white);
+
+  border: 1px solid var(--primary-color-green);
+  border-radius: 0.375rem;
+}
+
+#services .card h3 {
+  margin-block: 1rem;
 }
