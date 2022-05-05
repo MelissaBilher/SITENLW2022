@@ -30,6 +30,8 @@ ul {
 body {
   font-family: 'DM Sans';
   text-align: center;
+
+  overflow: overlay; /*deixar a rolagem em cima do stylo, assim não será somado nas larguras.*/
 }
 
 .wrapper {
@@ -166,9 +168,15 @@ nav.scroll {
    fill: var(--neutral-white);
  }
 
- nav.scroll svg:nth-child(2) path {
+ nav.scroll button path {
    stroke: var(--neutral-white);
  }
+
+nav button {
+ background: none;
+ border: none;
+ cursor:pointer;
+} 
 
  /* =============== MENU EXPANDED =============== */
 body.menu-expanded {
@@ -195,6 +203,8 @@ body.menu-expanded .menu, body.menu-expanded .close-menu {
 
    width: 100vw;
    height: 100vh;
+
+   padding-top: var(--nav-height);
  }
 
  body.menu-expanded nav {
@@ -243,3 +253,16 @@ body.menu-expanded .menu, body.menu-expanded .close-menu {
    align-items: center;
    justify-content: center;
  }
+
+ body.menu-expanded .logo, body.menu-expanded nav button {
+   position:relative;
+   z-index: 1;
+ }
+
+body.menu-expanded path {
+  fill: var(--neutral-white);
+}
+
+body.menu-expanded button path {
+  stroke: var(--neutral-white);
+}
