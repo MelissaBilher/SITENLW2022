@@ -11,13 +11,13 @@
 
   --hue: 170;
 
-  --primary-color: hsl(var(--hue), 100%,26%);
-  --primary-color-green: #dce9e2;
-  --primary-color-brand: #FFFAF1;
+  --primary-color: hsl(var(--hue), 100%, 26%);
+  --primary-color-green: hsl(calc(var(--hue) - 22), 23%, 89%);
+  --primary-color-brand: hsl(39, 100%, 97%);
 
-  --secondary-color: #212529;
-  --secondary-color-gray: #495057;
-  --second-color-brand: #f7f9f9;
+  --secondary-color: hsl(210, 11%, 15%);
+  --secondary-color-gray: hsl(210, 9%, 31%);
+  --second-color-brand: hsl(180, 14%, 97%);
   
   --neutral-white: #ffffff;
   --brand-dark:hsl(var(--hue), 100%, 14%);
@@ -129,7 +129,7 @@ section .content p {
 /* =============== CUSTOM COLORS =============== */
 
 #services .card circle {
-  fill: var(--primary-color-green);
+  fill: var(--primary-color);
 }
 
 #navigation .logo path[fill*="#00856F"],
@@ -142,6 +142,7 @@ button.open-menu path[stroke*="#00856F"],
   stroke:var(--primary-color);
 }
 
+body.menu-expanded #navigation .logo path,
 #navigation.scroll .logo path {
  fill: var(--neutral-white);
 }
@@ -489,6 +490,5 @@ footer .social-links {
 #backToTopButton.show {
   opacity: 1;
   visibility: visible;
-
   transform: translateY(0);
 }
