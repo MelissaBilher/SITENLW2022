@@ -17,7 +17,7 @@
 
   --secondary-color: hsl(210, 11%, 15%);
   --secondary-color-gray: hsl(210, 9%, 31%);
-  --second-color-brand: hsl(180, 14%, 97%);
+  --second-color-brand: hsl(calc(var(--hue) + 10), 14%, 97%);
   
   --neutral-white: #ffffff;
   --brand-dark:hsl(var(--hue), 100%, 14%);
@@ -536,5 +536,85 @@ nav#navigation .menu{
   align-items: center;
   justify-content: space-between;
   width: 60%;
+}
+
+nav#navigation .menu ul:nth-child(1) {
+  display: flex;
+  gap: 2rem;
+}
+
+nav#navigation .menu ul li a {
+  color: var(--primary-color);
+  opacity: 70%;
+}
+
+nav#navigation .menu a.button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem 1.5rem;
+
+  border: 1px solid var(--primary-color);
+  border-radius: 2.5rem;
+  
+  color:var(--primary-color);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+}
+
+nav#navigation.scroll .menu ul li a {
+  color: var(--second-color-brand);
+  opacity: 0.6;
+}
+
+nav#navigation.scroll .menu a.button {
+  border-color: var(--neutral-white);
+  color: var(--neutral-white);
+} 
+
+nav#navigation .menu li a {
+  transition: opacity 0.4s;
+}
+
+nav#navigation .menu li a:hover {
+  opacity: 1;
+  font-weight: 700;
+}
+
+nav#navigation .menu li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+
+  position: relative;
+  bottom: -1.2rem;
+  left: -0.5rem;
+
+  display: block;
+
+  transition: width 0.2s;
+}
+
+nav#navigation.scroll .menu li a::after {
+  background-color: var(--neutral-white);
+}
+
+nav#navigation .menu li a:hover::after {
+  padding-inline: 0.5rem;
+  width: 100%;
+
+} 
+
+nav#navigation.scroll .menu li a:hover {
+  opacity: 1;
+}
+
+nav#navigation.scroll .menu a.buttom:hover {
+  background-color: var(--primary-color);
+  filter: brightness(1.3);
+  border: none;
 }
 }
