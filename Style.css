@@ -44,7 +44,7 @@ body {
 }
 
 .wrapper {
-  width: 23.375rem;
+  width: min(50rem, 100%);
   margin-right:auto;
   margin-left:auto;
   padding-inline: 1.5rem;
@@ -181,6 +181,10 @@ nav button {
  cursor:pointer;
 } 
 
+nav .menu, nav .close-menu {
+  position: fixed;
+}
+
  /* =============== MENU EXPANDED =============== */
  
  body.menu-expanded {
@@ -207,7 +211,6 @@ body.menu-expanded .menu, body.menu-expanded .close-menu {
 }
 
  body.menu-expanded .menu {
-   position: fixed;
    top: 0;
    left: 0;
    
@@ -330,7 +333,7 @@ body.menu-expanded button path {
   background-color: var(--primary-color-brand);
   border: 1px solid var(--primary-color-green);
 
-  width: 20.4375rem;
+  width: 100%;
   
   margin-inline: auto;
   padding-block: 2.5rem;
@@ -491,4 +494,47 @@ footer .social-links {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* =============== RESPONSIVE 
+=============== */
+
+@media (min-width: 1024px) {
+
+
+/* =============== GERAL 
+=============== */
+.wrapper {
+  width: min(70rem, 100%);
+}
+
+
+/* =============== NAVIGATION 
+=============== */
+
+/* reset */
+nav#navigation .wrapper * {
+margin: 0;
+padding: 0;
+visibility: initial;
+display: initial;
+opacity: initial;
+flex-direction: initial;
+position: initial;
+font-size: initial;
+transform: initial;
+color: initial;
+background-color: initial;
+}
+
+nav#navigation .close-menu, nav#navigation .open-menu, nav#navigation .social-links {
+display: none;
+}
+
+nav#navigation .menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
 }
