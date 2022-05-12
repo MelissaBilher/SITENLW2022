@@ -6,6 +6,9 @@ function onScroll() {
   showBackToTopButtonOnScroll()
 
   activateMenuAtCurrentSection(home)
+  activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(about)
+  activateMenuAtCurrentSection(contact)
 }
 
 function activateMenuAtCurrentSection(section) {
@@ -16,7 +19,7 @@ function activateMenuAtCurrentSection(section) {
   // dados necessarios
   // topo da seção
   const sectionTop = section.offsetTop
-  //altura total da seção
+  //altura total da seção0
   const sectionHeight = section.offsetHeight
 
   // o topo da seção chegou ou ultrapassou a linha alvo
@@ -31,14 +34,15 @@ function activateMenuAtCurrentSection(section) {
   const sectionEndPassedTargetline = sectionEndsAt <= targetLine
 
   //limites da seção - os dois precisam estar true
-  const sectionBoudaries =
+  const sectionBoundaries =
     sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline
 
   const sectionId = section.getAttribute('id')
 
-  const menuElement = document.querySelector(`.menu a [href*=${sectionId}`)
+  const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
 
-  if (sectionBoudaries) {
+  menuElement.classList.remove('active')
+  if (sectionBoundaries) {
     menuElement.classList.add('active')
   }
 }
