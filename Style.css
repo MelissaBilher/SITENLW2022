@@ -515,11 +515,18 @@ body {
   display: grid;
 }
 
+.col-a {
+  grid-area: A;
+}
+.col-b {
+  grid-area: B;
+}
+
 section {
   padding-block: 10rem;
 }
 
-section h2 {
+section header h2 {
   font-size: 2.5rem;
   line-height: 3.25rem;
 }
@@ -662,13 +669,8 @@ nav#navigation.scroll .menu a.button:hover {
 }
 
 #home .col-a {
-  grid-area: A;
   text-align: left;
   align-self: center;
-}
-
-#home .col-b {
-  grid-area: B;
 }
 
 #home h1 {
@@ -717,6 +719,70 @@ nav#navigation.scroll .menu a.button:hover {
 
 #services .options {
   flex-direction: row;
+  flex-wrap: wrap;
+  gap:2.5rem;
+}
+
+#services .card {
+  width: 30%;
+  flex-grow: 1;
+}
+
+/* =============== ABOUT
+=============== */
+
+#about .wrapper {
+  grid-template-columns: 30rem 1fr;
+  grid-template-areas: 'B A';
+  gap: 4.1875rem;
+}
+
+#about .col-a {
+  align-self: center;
+}
+
+#about .col-a h2 {
+  text-align: left;
+}
+
+#about .content p {
+  margin-bottom: 0;
+}
+
+/* =============== CONTACT
+=============== */
+
+#contact .wrapper {
+  grid-template-columns: 1fr 35.9375rem;
+  grid-template-areas: 'A B';
+}
+
+#contact h2 {
+  width: 25.25rem;
+}
+
+/* =============== FOOTER =============== */
+
+footer {
+  padding-block: 5rem;
+}
+
+footer .wrapper {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'A B';
+}
+
+footer .col-a {
+  align-self: center;
+}
+
+footer .col-b {
+  align-self: center;
+  justify-self: flex-end;
+}
+
+footer p {
+  margin-bottom: 0;
 }
 
 }
