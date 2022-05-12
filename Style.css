@@ -632,19 +632,18 @@ nav#navigation.scroll .menu li a::after {
   background-color: var(--neutral-white);
 }
 
-nav#navigation .menu li a:active::after,
+nav#navigation .menu li a.active::after,
 nav#navigation .menu li a:hover::after {
   padding-inline: 0.5rem;
   width: 100%;
-
 } 
 
-nav#navigation.scroll .menu li a:active,
+nav#navigation.scroll .menu li a.active,
 nav#navigation.scroll .menu li a:hover {
   opacity: 1;
 }
 
-nav#navigation.scroll .menu a.button:active,
+nav#navigation.scroll .menu a.button.active,
 nav#navigation.scroll .menu a.button:hover {
   background-color: var(--primary-color);
   filter: brightness(1.3);
